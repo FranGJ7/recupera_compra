@@ -5,6 +5,12 @@
         </h2>   
     </x-slot>
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+<form class="mt-3" action="/dashboard" method="GET">
+  <input type="text" name="search" placeholder="Pesquisar usuário">
+  <x-button type="submit">Pesquisar</x-button>
+</form> 
+
 @if (count($users) > 0)
     @foreach ($users as $user)
         <p class="mt-3">{{ $user->name }} - {{ $user->email }}</p>
@@ -19,11 +25,6 @@
 @else
     <p>Nenhum usuário encontrado.</p>
 @endif
-
-<form class="mt-3" action="/dashboard" method="GET">
-  <input type="text" name="search" placeholder="Pesquisar usuário">
-  <x-button type="submit">Pesquisar</x-button>
-</form> 
 </div>
 
 </x-app-layout>
