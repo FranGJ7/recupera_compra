@@ -2,32 +2,28 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         Lista de usuários
-        </h2>
+        </h2>   
     </x-slot>
-
- 
-
-
-
-    <div>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 @if (count($users) > 0)
     @foreach ($users as $user)
-        <p>{{ $user->name }} - {{ $user->email }}</p>
-
-
+        <p class="mt-3">{{ $user->name }} - {{ $user->email }}</p>
+        <div class="mt-1">
         <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <x-button type="submit" >Delete</x-button>
-                </form>
-
+        </form>
+        </div>
     @endforeach
 @else
     <p>Nenhum usuário encontrado.</p>
 @endif
-<form action="/dashboard" method="GET">
+
+<form class="mt-3" action="/dashboard" method="GET">
   <input type="text" name="search" placeholder="Pesquisar usuário">
-  <button type="submit">Pesquisar</button>
+  <x-button type="submit">Pesquisar</x-button>
 </form> 
+</div>
 
 </x-app-layout>
