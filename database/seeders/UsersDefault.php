@@ -16,22 +16,22 @@ class UsersDefault extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Lucas',
+            'name' => 'Lucas Alves',
             'email' => 'lucas@example.com',
             'password' => bcrypt('123456789'),
         ]);
         User::create([
-            'name' => 'Thales',
+            'name' => 'Thales Andrade',
             'email' => 'thales@example.com',
             'password' => bcrypt('123456789'),
         ]);
         User::create([
-            'name' => 'Maria',
+            'name' => 'Maria Oliveira',
             'email' => 'maria@example.com',
             'password' => bcrypt('123456789'),
         ]);
         User::create([
-            'name' => 'amanda',
+            'name' => 'Amanda Silva',
             'email' => 'amanda@example.com',
             'password' => bcrypt('123456789'),
         ]);
